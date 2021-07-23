@@ -30,25 +30,3 @@ $ docker-compose exec backend rails db:create db:migrate
 ```sh
 $ docker-compose exec backend rspec
 ```
-
-- run specs and generate coverage report
-```sh
-$ COVERAGE=1 rspec
-```
-
-coverage report will be generated as html file in coverage directory in app root
-- Credentials
-
-```sh
-$ EDITOR=nano rails credentials:edit
-```
-
-- Assets Compile
-```sh
-$ RAILS_ENV=production rails assets:precompile
-```
-
-- Assets Sync with S3 Bucket
-```sh
-$ RAILS_ENV=production rails assets:sync
-```

@@ -13,7 +13,6 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :deletion
     DatabaseCleaner.clean_with :truncation
 
-    REDIS_CLIENT.flushall
     DatabaseCleaner.start
     DatabaseCleaner.clean
     load Rails.root.join('db', 'seeds.rb')

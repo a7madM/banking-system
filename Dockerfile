@@ -11,6 +11,7 @@ ENV APP_PATH /app/
 WORKDIR $APP_PATH
 ADD . $APP_PATH
 
+RUN gem install bundler -v 2.2.17
 RUN bundle update rails
 RUN bundle install -j3
 

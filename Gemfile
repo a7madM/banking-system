@@ -9,10 +9,11 @@ gem 'passenger', '~> 6.0.6'
 
 gem 'pg', '~> 1.1'
 
+gem 'bcrypt'
+
 gem 'jbuilder', '~> 2.11'
 
 gem 'bootsnap', '>= 1.4.4', require: false
-
 
 group :development, :test do
   gem 'brakeman'
