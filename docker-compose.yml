@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:13.1
+    env_file:
+      - environment.env
+    restart: always
+    healthcheck:
+      test: "exit 0"
+    volumes:
+      - postgres:/var/lib/postgresql
+
+  backend:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    entrypoint: /app/scripts/entrypoint.sh
+    env_file:
+      - environment.env
+    restart: always
+
+volumes:
+  postgres:
