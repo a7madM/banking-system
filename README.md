@@ -30,3 +30,14 @@ $ docker-compose exec backend rails db:create db:migrate
 ```sh
 $ docker-compose exec backend rspec
 ```
+
+# How it works
+```sh
+$ rails c
+```
+
+then in console
+
+```ruby
+UserTransaction.create({from_user: from_user, to_user: to_user, amount: amount) # this will add amount money to "to_user" account, and reduce it from "from_user" balance
+```
